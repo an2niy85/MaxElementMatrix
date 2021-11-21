@@ -14,18 +14,22 @@ namespace MaxElementMatrix
             int[,] matrix = new int[size, size];
             Random rand = new Random();
             int max = 0, k = 0, m = 0;
-
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    matrix[i, j] = rand.Next(9);
+                    matrix[i, j] = rand.Next(10);
                 }
             }
 
-            foreach (int item in matrix)
+            Console.WriteLine("Элементы исходной матрицы:");
+            for (int i = 0; i < size; i++)
             {
-                Console.Write(item + " ");
+                for (int j = 0; j < size; j++)
+                {
+                    Console.Write(matrix[i,j] + " ");
+                }
+                Console.WriteLine();
             }
 
             for (int i = 0; i < size; i++)
@@ -40,14 +44,20 @@ namespace MaxElementMatrix
                     }
                 }
             }
-
+            Console.WriteLine("\nНаибольший элемент матрицы с индексами: " + k + " " + m);
             Console.WriteLine(max);
             matrix[k, m] = 0;
 
-            foreach (int item in matrix)
+            Console.WriteLine("\nЭлементы полученной матрицы:");
+            for (int i = 0; i < size; i++)
             {
-                Console.Write(item + " ");
+                for (int j = 0; j < size; j++)
+                {
+                    Console.Write(matrix[i, j] + " ");
+                }
+                Console.WriteLine();
             }
+
             Console.ReadLine();
         }
     }
